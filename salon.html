@@ -352,7 +352,39 @@
             }
 
         }
+/* BOOKING FORM */
 
+.booking-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: #b8866f;
+}
+
+.booking-form .btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
     </style>
 
 </head>
@@ -644,7 +676,40 @@
         </p>
 
     </section>
+<!-- BOOKING -->
 
+<section class="section" id="booking">
+
+    <h2>Book Your Appointment</h2>
+
+    <p class="intro">
+        Choose your service and preferred time. We'll confirm your appointment on WhatsApp.
+    </p>
+
+    <form class="booking-form" onsubmit="bookAppointment(event)">
+
+        <input type="text" id="customerName" placeholder="Your Name" required>
+
+        <input type="tel" id="customerPhone" placeholder="Phone Number" required>
+
+        <select id="service" required>
+            <option value="">Select Service</option>
+            <option value="Hair Care">Hair Care</option>
+            <option value="Beauty Care">Beauty Care</option>
+            <option value="Nail Care">Nail Care</option>
+        </select>
+
+        <input type="date" id="bookingDate" required>
+
+        <input type="time" id="bookingTime" required>
+
+        <button type="submit" class="btn">
+            Book on WhatsApp →
+        </button>
+
+    </form>
+
+</section>
 
     <!-- LOCATION -->
 
@@ -727,7 +792,33 @@
         Demo Website by Yuvaraj Web Studio
 
     </footer>
+<script>
+function bookAppointment(event) {
+    event.preventDefault();
 
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("bookingDate").value;
+    const time = document.getElementById("bookingTime").value;
+
+    const message =
+        "Hello Glow Beauty Salon!%0A%0A" +
+        "I want to book an appointment.%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Service: " + service + "%0A" +
+        "Date: " + date + "%0A" +
+        "Time: " + time;
+
+    const whatsappNumber = "9195974988871";
+
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
 </body>
 
     </html>
