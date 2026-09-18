@@ -791,8 +791,8 @@
         <br>
         Demo Website by Yuvaraj Web Studio
 
-    </footer>
-<script>
+    </foot>
+        <script>
 function bookAppointment(event) {
     event.preventDefault();
 
@@ -803,22 +803,23 @@ function bookAppointment(event) {
     const time = document.getElementById("bookingTime").value;
 
     const message =
-        "Hello Glow Beauty Salon!%0A%0A" +
-        "I want to book an appointment.%0A%0A" +
-        "Name: " + name + "%0A" +
-        "Phone: " + phone + "%0A" +
-        "Service: " + service + "%0A" +
-        "Date: " + date + "%0A" +
+        "Hello Glow Beauty Salon!\n\n" +
+        "I want to book an appointment.\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Service: " + service + "\n" +
+        "Date: " + date + "\n" +
         "Time: " + time;
 
     const whatsappNumber = "9195974988871";
 
     const whatsappURL =
-        "https://wa.me/" + whatsappNumber + "?text=" + message;
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+    window.location.href = whatsappURL;
 }
-</script>
+        </script>
 </body>
 
     </html>
