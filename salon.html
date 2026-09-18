@@ -1,1 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LuxeGlow Salon | Beauty & Style</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#fffaf7;
+    color:#29221f;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#241c1a;
+    color:white;
+    padding:16px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#e7b58c;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(135deg,#f7e4d6,#fffaf7);
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,76px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#a96f4f;
+}
+
+.hero p{
+    max-width:600px;
+    margin:0 auto 30px;
+    color:#665a55;
+}
+
+.btn{
+    display:inline-block;
+    background:#241c1a;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    margin:5px;
+}
+
+.btn.light{
+    background:white;
+    color:#241c1a;
+    border:1px solid #ddd;
+}
+
+section{
+    padding:80px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#746963;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px 22px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.price{
+    margin-top:15px;
+    font-weight:bold;
+    color:#a96f4f;
+}
+
+.about{
+    background:#f4e7df;
+}
+
+.about-box{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-box h2{
+    font-size:40px;
+    margin-bottom:18px;
+}
+
+.features{
+    display:grid;
+    gap:15px;
+}
+
+.feature{
+    background:white;
+    padding:18px;
+    border-radius:14px;
+}
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.price-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    border:1px solid #eaded7;
+}
+
+.price-card h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.big-price{
+    font-size:35px;
+    font-weight:bold;
+    color:#a96f4f;
+    margin:15px 0;
+}
+
+.price-card ul{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.price-card li{
+    padding:6px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-item{
+    height:230px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    background:linear-gradient(135deg,#ead0bd,#fff);
+}
+
+.reviews{
+    background:#241c1a;
+    color:white;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:#332926;
+    padding:25px;
+    border-radius:18px;
+}
+
+.stars{
+    color:#e7b58c;
+    margin-bottom:12px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+    background:#f4e7df;
+    padding:45px 25px;
+    border-radius:25px;
+}
+
+.contact-box p{
+    margin:10px 0;
+}
+
+footer{
+    background:#241c1a;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:25px;
+    z-index:2000;
+}
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav a{
+        margin:0 7px;
+        font-size:12px;
+    }
+
+    .services,
+    .pricing,
+    .review-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-box{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:520px){
+
+    section{
+        padding:60px 5%;
+    }
+
+    .services,
+    .pricing,
+    .review-grid,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Luxe<span>Glow</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="badge">✨ Beauty • Style • Confidence</div>
+
+        <h1>
+            Your Beauty.<br>
+            <span>Your Signature.</span>
+        </h1>
+
+        <p>
+            Discover premium hair, beauty and styling services
+            designed to make you look and feel your absolute best.
+        </p>
+
+        <a href="#services" class="btn">Explore Services</a>
+        <a href="#contact" class="btn light">Book Appointment</a>
+
+    </div>
+</section>
+
+<section id="services">
+
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Professional beauty services for every occasion.</p>
+    </div>
+
+    <div class="services">
+
+        <div class="card">
+            <div class="icon">💇‍♀️</div>
+            <h3>Hair Styling</h3>
+            <p>Modern cuts, styling and professional hair care.</p>
+            <div class="price">From ₹499</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Hair Color</h3>
+            <p>Beautiful colors, highlights and premium treatments.</p>
+            <div class="price">From ₹1,499</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Facial & Skin</h3>
+            <p>Relaxing facial treatments for fresh glowing skin.</p>
+            <div class="price">From ₹799</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">👰</div>
+            <h3>Bridal Beauty</h3>
+            <p>Complete bridal styling for your special day.</p>
+            <div class="price">From ₹4,999</div>
+        </div>
+
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LuxeGlow Salon | Beauty & Style</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#fffaf7;
+    color:#29221f;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#241c1a;
+    color:white;
+    padding:16px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#e7b58c;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(135deg,#f7e4d6,#fffaf7);
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,76px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#a96f4f;
+}
+
+.hero p{
+    max-width:600px;
+    margin:0 auto 30px;
+    color:#665a55;
+}
+
+.btn{
+    display:inline-block;
+    background:#241c1a;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    margin:5px;
+}
+
+.btn.light{
+    background:white;
+    color:#241c1a;
+    border:1px solid #ddd;
+}
+
+section{
+    padding:80px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#746963;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px 22px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.price{
+    margin-top:15px;
+    font-weight:bold;
+    color:#a96f4f;
+}
+
+.about{
+    background:#f4e7df;
+}
+
+.about-box{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-box h2{
+    font-size:40px;
+    margin-bottom:18px;
+}
+
+.features{
+    display:grid;
+    gap:15px;
+}
+
+.feature{
+    background:white;
+    padding:18px;
+    border-radius:14px;
+}
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.price-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    border:1px solid #eaded7;
+}
+
+.price-card h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.big-price{
+    font-size:35px;
+    font-weight:bold;
+    color:#a96f4f;
+    margin:15px 0;
+}
+
+.price-card ul{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.price-card li{
+    padding:6px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-item{
+    height:230px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    background:linear-gradient(135deg,#ead0bd,#fff);
+}
+
+.reviews{
+    background:#241c1a;
+    color:white;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:#332926;
+    padding:25px;
+    border-radius:18px;
+}
+
+.stars{
+    color:#e7b58c;
+    margin-bottom:12px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+    background:#f4e7df;
+    padding:45px 25px;
+    border-radius:25px;
+}
+
+.contact-box p{
+    margin:10px 0;
+}
+
+footer{
+    background:#241c1a;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:25px;
+    z-index:2000;
+}
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav a{
+        margin:0 7px;
+        font-size:12px;
+    }
+
+    .services,
+    .pricing,
+    .review-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-box{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:520px){
+
+    section{
+        padding:60px 5%;
+    }
+
+    .services,
+    .pricing,
+    .review-grid,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Luxe<span>Glow</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="badge">✨ Beauty • Style • Confidence</div>
+
+        <h1>
+            Your Beauty.<br>
+            <span>Your Signature.</span>
+        </h1>
+
+        <p>
+            Discover premium hair, beauty and styling services
+            designed to make you look and feel your absolute best.
+        </p>
+
+        <a href="#services" class="btn">Explore Services</a>
+        <a href="#contact" class="btn light">Book Appointment</a>
+
+    </div>
+</section>
+
+<section id="services">
+
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Professional beauty services for every occasion.</p>
+    </div>
+
+    <div class="services">
+
+        <div class="card">
+            <div class="icon">💇‍♀️</div>
+            <h3>Hair Styling</h3>
+            <p>Modern cuts, styling and professional hair care.</p>
+            <div class="price">From ₹499</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Hair Color</h3>
+            <p>Beautiful colors, highlights and premium treatments.</p>
+            <div class="price">From ₹1,499</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Facial & Skin</h3>
+            <p>Relaxing facial treatments for fresh glowing skin.</p>
+            <div class="price">From ₹799</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">👰</div>
+            <h3>Bridal Beauty</h3>
+            <p>Complete bridal styling for your special day.</p>
+            <div class="price">From ₹4,999</div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <div class="about-box">
+
+        <div>
+            <h2>Beauty With A Personal Touch.</h2>
+
+            <p>
+                At LuxeGlow Salon, we believe beauty is not just
+                about appearance. It is about confidence, comfort
+                and feeling your best.
+            </p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                ⭐ Experienced Stylists
+            </div>
+
+            <div class="feature">
+                ✨ Premium Beauty Products
+            </div>
+
+            <div class="feature">
+                💖 Personalized Service
+            </div>
+
+            <div class="feature">
+                🧼 Clean & Comfortable Studio
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="pricing">
+
+    <div class="section-title">
+        <h2>Simple Pricing</h2>
+        <p>Choose a service package that fits you.</p>
+    </div>
+
+    <div class="pricing">
+
+        <div class="price-card">
+            <h3>Essential</h3>
+            <div class="big-price">₹999</div>
+
+            <ul>
+                <li>Hair Styling</li>
+                <li>Basic Facial</li>
+                <li>Hair Wash</li>
+            </ul>
+
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+
+        <div class="price-card">
+            <h3>Premium</h3>
+            <div class="big-price">₹1,999</div>
+
+            <ul>
+                <li>Hair Styling</li>
+                <li>Premium Facial</li>
+                <li>Hair Treatment</li>
+            </ul>
+
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+
+        <div class="price-card">
+            <h3>Bridal</h3>
+            <div class="big-price">₹4,999</div>
+
+            <ul>
+                <li>Bridal Makeup</li>
+                <li>Hair Styling</li>
+                <li>Beauty Consultation</li>
+            </ul>
+
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Our Style Gallery</h2>
+        <p>A glimpse of our beauty experience.</p>
+    </div>
+
+    <div class="gallery">
+
+        <div class="gallery-item">💇‍♀️</div>
+        <div class="gallery-item">💄</div>
+        <div class="gallery-item">✨</div>
+        <div class="gallery-item">💅</div>
+        <div class="gallery-item">👰</div>
+        <div class="gallery-item">💆‍♀️</div>
+
+    </div>
+
+</section>
+
+<section class="reviews">
+
+    <div class="section-title">
+        <h2>What Our Clients Say</h2>
+        <p>Realistic sample reviews for this demo website.</p>
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                “Beautiful service and very friendly staff.
+                I loved my hairstyle!”
+            </p>
+            <br>
+            <strong>— Priya</strong>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                “The salon atmosphere was relaxing and the
+                results were amazing.”
+            </p>
+            <br>
+            <strong>— Ananya</strong>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                “Highly recommended for bridal styling.
+                Everything was perfect.”
+            </p>
+            <br>
+            <strong>— Divya</strong>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Ready For Your Glow-Up?</h2>
+        <p>Book your appointment today.</p>
+    </div>
+
+    <div class="contact-box">
+
+        <h3>LuxeGlow Beauty Salon</h3>
+
+        <p>📍 Chennai, Tamil Nadu</p>
+        <p>📞 +91 95974 98871</p>
+        <p>🕒 Mon – Sun | 9:00 AM – 8:00 PM</p>
+
+        <br>
+
+        <a
+            href="https://wa.me/919597498871"
+            class="btn"
+            target="_blank">
+            💬 WhatsApp Booking
+        </a>
+
+        <a
+            href="tel:+919876543210"
+            class="btn light">
+            📞 Call Now
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>LuxeGlow Salon</h3>
+
+    <p>Beauty • Style • Confidence</p>
+
+    <br>
+
+    <p>© 2026 LuxeGlow Salon. Demo website by Yuvaraj Web Studio.</p>
+
+</footer>
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919597498871"
+    target="_blank">
+    💬
+</a>
+
+</body>
+</html>
+<section class="about" id="about">
+
+    <div class="about-box">
+
+        <div>
+            <h2>Beauty With A Personal Touch.</h2>
+
+            <p>
+                At LuxeGlow Salon, we believe beauty is not just
+                about appearance. It is about confidence, comfort
+                and feeling your best.
+            </p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                ⭐ Experienced Stylists
+            </div>
+
+            <div class="feature">
+                ✨ Premium Beauty Products
+            </div>
+
+            <div class="feature">
+                💖 Personalized Service
+            </div>
+
+            <div class="feature">
+                🧼 Clean & Comfortable Studio
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="pricing">
+
+    <div class="section-title">
+        <h2>Simple Pricing</h2>
+        <p>Choose a service package that fits you.</p>
+    </div>
+
+    <div class="pricing">
+
+        <div class="price-card">
+            <h3>Essential</h3>
+            <div class="big-price">₹999</div>
+
+            <ul>
+                <li>Hair Styling</li>
+                <li>Basic Facial</li>
+                <li>Hair Wash</li>
+            </ul>
+
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+
+        <div class="price-card">
+            <h3>Premium</h3>
+            <div class="big-price">₹1,999</div>
+
+            <ul>
+                <li>Hair Styling</li>
+                <li>Premium Facial</li>
+                <li>Hair Treatment</li>
+            </ul>
+
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+
+        <div class="price-card">
+            <h3>Bridal</h3>
+            <div class="big-price">₹4,999</div>
+
+            <ul>
+                <li>Bridal Makeup</li>
+                <li>Hair Styling</li>
+                <li>Beauty Consultation</li>
+            </ul>
+
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Our Style Gallery</h2>
+        <p>A glimpse of our beauty experience.</p>
+    </div>
+
+    <div class="gallery">
+
+        <div class="gallery-item">💇‍♀️</div>
+        <div class="gallery-item">💄</div>
+        <div class="gallery-item">✨</div>
+        <div class="gallery-item">💅</div>
 
